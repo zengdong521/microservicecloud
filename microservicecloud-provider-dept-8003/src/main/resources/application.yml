@@ -21,11 +21,20 @@ spring:
       initial-size: 5
       max-total: 5
       max-wait-millis: 200
-      
+
+   dubbo:
+     application:
+       name: microservicecloud-dept
+     base-package: com.atguigu.springcloud
+     registry:
+       address: zookeeper://127.0.0.1:2181
+     protocol:
+       name: dubbo
+       port: 20880
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/
   instance:
     instance-id: microservicecloud-dept8003   #自定义服务名称信息
     prefer-ip-address: true     #访问路径可以显示IP地址
